@@ -1,10 +1,10 @@
 # API Blueprint API
 
-[![Apiary Documentation](https://img.shields.io/badge/Apiary-Documented-blue.svg)](http://docs.apiblueprint.apiary.io/)
+[![Apiary Documentation](https://img.shields.io/badge/Apiary-Documented-blue.svg)](http://docs.apiblueprintapi.apiary.io/)
 
 This repository contains the API Blueprint for the API Blueprint parsing service.
 You can find the documentation for the parsing service on
-[Apiary](http://docs.apiblueprint.apiary.io/).
+[Apiary](http://docs.apiblueprintapi.apiary.io/).
 
 ## Usage
 
