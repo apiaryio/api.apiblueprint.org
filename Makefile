@@ -9,6 +9,7 @@ SOURCES := apiary.apib sample.apib \
 	sample.apiblueprint.ast-2.0.json
 DEPENDENCIES = $(foreach file,$(SOURCES),source/$(file))
 HOST := https://api.apiblueprint.org/
+APIARY_API := apiblueprintapi
 
 apiary.apib: node_modules $(DEPENDENCIES)
 	@echo "Transcluding API Blueprint"
@@ -23,7 +24,7 @@ clean:
 
 publish: apiary.apib
 	@echo "Uploading blueprint to Apiary"
-	@apiary publish --api-name=apiblueprint
+	@apiary publish --api-name=$(APIARY_API)
 
 node_modules:
 	npm install hercule dredd npm js-yaml
