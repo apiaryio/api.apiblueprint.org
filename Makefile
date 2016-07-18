@@ -1,6 +1,7 @@
 HERCULE := ./node_modules/.bin/hercule
 DREDD := ./node_modules/.bin/dredd
-SOURCES := apiary.apib sample.apib \
+SOURCES := apiary.apib sample.apib introduction.md \
+	root.apib parser.apib composer.apib \
 	sample.refract.parse-result.json \
 	sample.refract.parse-result.yaml \
 	sample.apiblueprint.parse-result.json \

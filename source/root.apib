@@ -1,0 +1,32 @@
+## Service Root [/]
+API entry point.
+
+This resource does not have any attributes, instead it provides list of available affordances.
+
+### Affordances
+- `parse` - Parse an API description
+
+    See _API Description Parser_ resource's _Parser_ action for details.
+
+- `compose` - Composes an API description
+
+    See _API Description Composer_ resource's _Compose_ action for details.
+
+### List [GET]
+
++ Relation: index
+
++ Response 200 (application/hal+json)
+    + Headers
+
+            Link: <http://docs.apiblueprint.apiary.io>; rel="profile"
+
+    + Body
+
+            {
+                "_links": {
+                    "self": {"href": "/"},
+                    "parse": {"href": "/parser"},
+                    "compose": {"href": "/composer"}
+                }
+            }
