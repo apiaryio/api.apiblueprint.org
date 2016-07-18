@@ -1,0 +1,46 @@
+## API Description Composer [/composer]
+Reverse the parsing process--compose an API description format.
+
+### Compose [POST]
+The composition of API Blueprint is performed as it is provided by the [Matter Compiler](https://github.com/apiaryio/matter_compiler) tool.
+
+#### Input Media Types
+
+##### API Blueprint AST
+
+```
+application/vnd.apiblueprint.ast+json
+application/vnd.apiblueprint.ast+yaml
+```
+
+Serialized API Blueprint AST represented either in its JSON or YAML format as defined in [API Blueprint AST Serialization Media Types](https://github.com/apiaryio/api-blueprint-ast).
+
+Please keep in mind that the API Blueprint AST is soon to be deprecated in favor of the API Description Parse Result Namespace.
+
+#### Output Media Types
+
+##### API Blueprint
+
+```
+text/vnd.apiblueprint
+```
+
+API Blueprint as defined in its [specification](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md).
+
++ Relation: compose
+
++ Request Compose API Blueprint from AST 2.0 sent as YAML (application/vnd.apiblueprint.ast+yaml; version=2.0)
+
+        :[](sample.apiblueprint.ast-2.0.yaml)
+
++ Response 200 (text/vnd.apiblueprint)
+
+        :[](sample.apib)
+
++ Request Compose API Blueprint from AST 2.0 sent as JSON (application/vnd.apiblueprint.ast+json; version=2.0)
+
+        :[](sample.apiblueprint.ast-2.0.json)
+
++ Response 200 (text/vnd.apiblueprint)
+
+        :[](sample.apib)

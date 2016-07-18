@@ -1,0 +1,95 @@
+## API Description Parser [/parser]
+Parse an API description format.
+
+### Parse [POST]
+API Blueprint parsing is performed as it is provided by the [Drafter](https://github.com/apiaryio/drafter) reference parser.
+
+#### Input Media Types
+
+##### API Blueprint
+
+```
+text/vnd.apiblueprint
+```
+
+API Blueprint as defined in its [specification](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md).
+
+#### Output Media Types
+
+##### API Description Parse Result Namespace
+
+```
+application/vnd.refract.parse-result+json
+application/vnd.refract.parse-result+yaml
+```
+
+General-purpose result of the parsing operation. The parse result is in form of the Refract data structure as defined in its [specification](https://github.com/refractproject/refract-spec). The parse result data comply with the [Parse Result Namespace](https://github.com/refractproject/refract-spec/blob/master/namespaces/parse-result.md).
+
+##### API Blueprint Parse Result
+
+```
+application/vnd.apiblueprint.parseresult+json
+application/vnd.apiblueprint.parseresult+yaml
+```
+
+API Blueprint Parse Result is just serialized API Blueprint AST (`application/vnd.apiblueprint.ast+json` or `application/vnd.apiblueprint.ast+yaml`) alongside with parser annotations (source map, warnings and errors) defined in [Parse Result Media Types](https://github.com/apiaryio/api-blueprint-ast/blob/master/Parse%20Result.md).
+
+Please keep in mind that the API Blueprint parse result media types are soon to be deprecated in favor of the API Description Parse Result Namespace.
+
++ Relation: parse
+
++ Request Parse API Blueprint into Parse Result Namespace as JSON (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+json
+
+    + Body
+
+            :[](sample.apib)
+
++ Response 200 (application/vnd.refract.parse-result+json)
+
+        :[](sample.refract.parse-result.json)
+
++ Request Parse API Blueprint into Parse Result Namespace as YAML (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+yaml
+
+    + Body
+
+            :[](sample.apib)
+
++ Response 200 (application/vnd.refract.parse-result+yaml)
+
+        :[](sample.refract.parse-result.yaml)
+
++ Request Parse API Blueprint into JSON Parse Result AST (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.apiblueprint.parseresult+json; version=2.2
+
+    + Body
+
+            :[](sample.apib)
+
++ Response 200 (application/vnd.apiblueprint.parseresult+json; version=2.2)
+
+        :[](sample.apiblueprint.parse-result.json)
+
++ Request Parse API Blueprint into YAML Parse Result AST (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.apiblueprint.parseresult+yaml; version=2.2
+
+    + Body
+
+            :[](sample.apib)
+
++ Response 200 (application/vnd.apiblueprint.parseresult+yaml; version=2.2)
+
+        :[](sample.apiblueprint.parse-result.yaml)

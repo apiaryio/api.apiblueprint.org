@@ -1,6 +1,7 @@
 HERCULE := ./node_modules/.bin/hercule
 DREDD := ./node_modules/.bin/dredd
-SOURCES := apiary.apib sample.apib \
+SOURCES := apiary.apib sample.apib introduction.md \
+	root.apib parser.apib composer.apib \
 	sample.refract.parse-result.json \
 	sample.refract.parse-result.yaml \
 	sample.apiblueprint.parse-result.json \
@@ -15,7 +16,7 @@ apiary.apib: node_modules $(DEPENDENCIES)
 	@echo "Transcluding API Blueprint"
 	@$(HERCULE) source/apiary.apib -o apiary.apib
 
-test: node_modules apiary.apib
+test: apiary.apib
 	$(DREDD) --hookfiles source/dredd-hooks.js apiary.apib $(HOST)
 
 clean:
@@ -27,4 +28,4 @@ publish: apiary.apib
 	@apiary publish --api-name=$(APIARY_API)
 
 node_modules:
-	npm install hercule dredd npm js-yaml
+	npm install hercule dredd js-yaml
