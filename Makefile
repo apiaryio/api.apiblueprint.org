@@ -28,4 +28,4 @@ publish: apiary.apib
 	@apiary publish --api-name=$(APIARY_API)
 
 node_modules:
-	npm install hercule dredd js-yaml
+	npm install hercule dredd
