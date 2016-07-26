@@ -93,3 +93,45 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 + Response 200 (application/vnd.apiblueprint.parseresult+yaml; version=2.2)
 
         :[](sample.apiblueprint.parse-result.yaml)
+
++ Request Unsupported Input Media Type
+
+    + Headers
+
+            Accept: application/vnd.apiblueprint.parseresult+json; version=2.2
+
+    + Body
+
+            #Test API
+            ##Test [/test]
+
+
++ Response 415 (application/vnd.error+json)
+
+        {
+          "statusCode": 415,
+          "message": "",
+          "name": "Rest Error"
+        }
+
++ Request Unsupported Output Media Type (text/vnd.legacyblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+json
+
+    + Body
+
+            --- Sample API ---
+            GET /message
+            < 200
+            < Content-Type: text/plain
+            Hello World!
+
++ Response 406 (application/vnd.error+json)
+
+        {
+          "statusCode": 406,
+          "message": "",
+          "name": "Rest Error"
+        }
