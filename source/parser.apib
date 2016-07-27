@@ -94,6 +94,21 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
         :[](sample.apiblueprint.parse-result.yaml)
 
++ Request Invalid Document (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+yaml
+
+    + Body
+
+            # Data Structures
+            # A (C)
+
++ Response 422 (application/vnd.refract.parse-result+yaml)
+
+        :[](invalid.refract.parse-result.yaml)
+
 + Request Unsupported Input Media Type
 
     + Headers
@@ -102,9 +117,8 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            #Test API
-            ##Test [/test]
-
+            # Test API
+            ## Test [/test]
 
 + Response 415 (application/vnd.error+json)
 

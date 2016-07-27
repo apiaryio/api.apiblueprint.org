@@ -1,0 +1,26 @@
+element: parseResult
+content:
+  - element: annotation
+    meta:
+      classes:
+        - error
+    attributes:
+      code: 4
+      sourceMap:
+        - element: sourceMap
+          content:
+            - - 18
+              - 8
+    content: base type 'C' is not defined in the document
+  - element: annotation
+    meta:
+      classes:
+        - warning
+    attributes:
+      code: 8
+      sourceMap:
+        - element: sourceMap
+          content:
+            - - 18
+              - 8
+    content: unable to find the symbol `C` in the list of named types
