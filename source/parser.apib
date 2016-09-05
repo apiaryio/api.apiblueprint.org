@@ -14,6 +14,15 @@ text/vnd.apiblueprint
 
 API Blueprint as defined in its [specification](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md).
 
+##### Swagger 2.0
+
+```
+application/swagger+yaml
+application/swagger+json
+```
+
+Swagger as defined in its [specification](http://swagger.io/specification)
+
 #### Output Media Types
 
 ##### API Description Parse Result Namespace
@@ -128,19 +137,18 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
           "name": "Rest Error"
         }
 
-+ Request Unsupported Output Media Type (text/vnd.legacyblueprint)
++ Request Unsupported Output Media Type (application/swagger+yaml)
 
     + Headers
 
-            Accept: application/vnd.refract.parse-result+json
+            Accept: application/vnd.apiblueprint.parseresult+json; version=2.2
 
     + Body
 
-            --- Sample API ---
-            GET /message
-            < 200
-            < Content-Type: text/plain
-            Hello World!
+            swagger: '2.0'
+            info:
+              title: Swagger
+              version: '2.0'
 
 + Response 406 (application/vnd.error+json)
 
