@@ -2,9 +2,7 @@
   "_version": "2.2",
   "ast": {
     "_version": "4.0",
-    "metadata": [
-
-    ],
+    "metadata": [],
     "name": "Hello API",
     "description": "",
     "element": "category",
@@ -17,35 +15,25 @@
             "element": "resource",
             "name": "",
             "description": "",
-            "uriTemplate": "\/message",
-            "model": {
-
-            },
-            "parameters": [
-
-            ],
+            "uriTemplate": "/message",
+            "model": {},
+            "parameters": [],
             "actions": [
               {
                 "name": "",
                 "description": "",
                 "method": "GET",
-                "parameters": [
-
-                ],
+                "parameters": [],
                 "attributes": {
                   "relation": "",
                   "uriTemplate": ""
                 },
-                "content": [
-
-                ],
+                "content": [],
                 "examples": [
                   {
                     "name": "",
                     "description": "",
-                    "requests": [
-
-                    ],
+                    "requests": [],
                     "responses": [
                       {
                         "name": "200",
@@ -53,7 +41,7 @@
                         "headers": [
                           {
                             "name": "Content-Type",
-                            "value": "text\/plain"
+                            "value": "text/plain"
                           }
                         ],
                         "body": "Hello World!\n",
@@ -73,9 +61,7 @@
                 ]
               }
             ],
-            "content": [
-
-            ]
+            "content": []
           }
         ]
       }
@@ -88,35 +74,25 @@
             "element": "resource",
             "name": "",
             "description": "",
-            "uriTemplate": "\/message",
-            "model": {
-
-            },
-            "parameters": [
-
-            ],
+            "uriTemplate": "/message",
+            "model": {},
+            "parameters": [],
             "actions": [
               {
                 "name": "",
                 "description": "",
                 "method": "GET",
-                "parameters": [
-
-                ],
+                "parameters": [],
                 "attributes": {
                   "relation": "",
                   "uriTemplate": ""
                 },
-                "content": [
-
-                ],
+                "content": [],
                 "examples": [
                   {
                     "name": "",
                     "description": "",
-                    "requests": [
-
-                    ],
+                    "requests": [],
                     "responses": [
                       {
                         "name": "200",
@@ -124,7 +100,7 @@
                         "headers": [
                           {
                             "name": "Content-Type",
-                            "value": "text\/plain"
+                            "value": "text/plain"
                           }
                         ],
                         "body": "Hello World!\n",
@@ -144,16 +120,12 @@
                 ]
               }
             ],
-            "content": [
-
-            ]
+            "content": []
           }
         ]
       }
     ]
   },
-  "error": null,
-  "warnings": [
-
-  ]
+  "warnings": [],
+  "error": null
 }
