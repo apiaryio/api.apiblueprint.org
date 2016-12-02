@@ -32,7 +32,7 @@ application/vnd.refract.parse-result+json
 application/vnd.refract.parse-result+yaml
 ```
 
-General-purpose result of the parsing operation. The parse result is in form of the Refract data structure as defined in its [specification](https://github.com/refractproject/refract-spec). The parse result data comply with the [Parse Result Namespace](https://github.com/refractproject/refract-spec/blob/master/namespaces/parse-result.md).
+General-purpose result of the parsing operation. The parse result is in form of the Refract data structure as defined in its [specification](https://github.com/refractproject/refract-spec). The parse result data comply with the [Parse Result Namespace](https://github.com/refractproject/refract-spec/blob/master/namespaces/parse-result-namespace.md).
 
 ##### API Blueprint Parse Result
 
@@ -55,11 +55,11 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            :[](sample.apib)
+            :[](fixtures/apib/normal.apib)
 
 + Response 200 (application/vnd.refract.parse-result+json)
 
-        :[](sample.refract.parse-result.json)
+        :[](fixtures/apib/normal.refract.parse-result.json)
 
 + Request Parse API Blueprint into Parse Result Namespace as YAML (text/vnd.apiblueprint)
 
@@ -69,11 +69,11 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            :[](sample.apib)
+            :[](fixtures/apib/normal.apib)
 
 + Response 200 (application/vnd.refract.parse-result+yaml)
 
-        :[](sample.refract.parse-result.yaml)
+        :[](fixtures/apib/normal.refract.parse-result.yaml)
 
 + Request Parse API Blueprint into JSON Parse Result AST (text/vnd.apiblueprint)
 
@@ -83,11 +83,11 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            :[](sample.apib)
+            :[](fixtures/apib/normal.apib)
 
 + Response 200 (application/vnd.apiblueprint.parseresult+json; version=2.2)
 
-        :[](sample.apiblueprint.parse-result.json)
+        :[](fixtures/apib/normal.apiblueprint.parseresult.json)
 
 + Request Parse API Blueprint into YAML Parse Result AST (text/vnd.apiblueprint)
 
@@ -97,11 +97,11 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            :[](sample.apib)
+            :[](fixtures/apib/normal.apib)
 
 + Response 200 (application/vnd.apiblueprint.parseresult+yaml; version=2.2)
 
-        :[](sample.apiblueprint.parse-result.yaml)
+        :[](fixtures/apib/normal.apiblueprint.parseresult.yaml)
 
 + Request Invalid Document (text/vnd.apiblueprint)
 
@@ -111,12 +111,11 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            # Data Structures
-            # A (C)
+            :[](fixtures/apib/error.apib)
 
 + Response 422 (application/vnd.refract.parse-result+yaml)
 
-        :[](invalid.refract.parse-result.yaml)
+        :[](fixtures/apib/error.refract.parse-result.yaml)
 
 + Request Unsupported Input Media Type
 
@@ -126,8 +125,7 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            # Test API
-            ## Test [/test]
+            :[](fixtures/apib/normal.apib)
 
 + Response 415 (application/vnd.error+json)
 
@@ -145,10 +143,7 @@ Please keep in mind that the API Blueprint parse result media types are soon to 
 
     + Body
 
-            swagger: '2.0'
-            info:
-              title: Swagger
-              version: '2.0'
+            :[](fixtures/swagger.yaml/normal.yaml)
 
 + Response 406 (application/vnd.error+json)
 

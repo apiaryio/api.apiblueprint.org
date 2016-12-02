@@ -1,30 +1,36 @@
 _version: 2.0
 metadata:
-name:
+name: Hello API
 description:
 resourceGroups:
--   name:
+  -
+    name:
     description:
     resources:
-    -   name:
+      -
+        name:
         description:
         uriTemplate: "/message"
         model:
         parameters:
         actions:
-        -   name:
+          -
+            name:
             description:
             method: "GET"
             parameters:
             examples:
-            - name:
+              -
+                name:
                 description:
                 requests:
                 responses:
-                -   name: "200"
+                  -
+                    name: "200"
                     description:
                     headers:
-                    -   name: "Content-Type"
+                      -
+                        name: "Content-Type"
                         value: "text/plain"
                     body: "Hello World!\n"
                     schema:

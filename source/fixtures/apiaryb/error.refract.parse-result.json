@@ -1,0 +1,32 @@
+{
+  "element": "parseResult",
+  "meta": {},
+  "attributes": {},
+  "content": [
+    {
+      "element": "annotation",
+      "meta": {
+        "classes": [
+          "error"
+        ]
+      },
+      "attributes": {
+        "sourceMap": [
+          {
+            "element": "sourceMap",
+            "meta": {},
+            "attributes": {},
+            "content": [
+              [
+                31,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "content": "Expected \"COPY\", \"DELETE\", \"GET\", \"HEAD\", \"LOCK\", \"MKCOL\", \"MOVE\", \"OPTIONS\", \"PATCH\", \"POST\", \"PROPPATCH\", \"PUT\" or \"UNLOCK\" but end of input found."
+    }
+  ]
+}
+

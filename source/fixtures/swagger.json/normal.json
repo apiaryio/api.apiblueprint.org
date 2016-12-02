@@ -1,0 +1,20 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Swagger",
+    "version": "2.0"
+  },
+  "paths": {
+    "/test": {
+      "get": {
+        "summary": "Test get",
+        "description": "Test description",
+        "responses": {
+          "204": {
+            "description": "Test response"
+          }
+        }
+      }
+    }
+  }
+}

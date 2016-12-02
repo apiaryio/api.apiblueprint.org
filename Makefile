@@ -1,13 +1,16 @@
 HERCULE := ./node_modules/.bin/hercule
 DREDD := ./node_modules/.bin/dredd
-SOURCES := apiary.apib sample.apib introduction.md \
+SOURCES := apiary.apib introduction.md \
 	root.apib parser.apib composer.apib \
-	sample.refract.parse-result.json \
-	sample.refract.parse-result.yaml \
-	sample.apiblueprint.parse-result.json \
-	sample.apiblueprint.parse-result.yaml \
-	sample.apiblueprint.ast-2.0.yaml \
-	sample.apiblueprint.ast-2.0.json
+	fixtures/apib/normal.refract.parse-result.json \
+	fixtures/apib/normal.refract.parse-result.yaml \
+	fixtures/apib/normal.apiblueprint.parseresult.json \
+	fixtures/apib/normal.apiblueprint.parseresult.yaml \
+	fixtures/apib/normal.apiblueprint.ast.yaml \
+	fixtures/apib/normal.apiblueprint.ast.json \
+	fixtures/apib/error.apib \
+	fixtures/apib/error.refract.parse-result.yaml \
+	fixtures/swagger.yaml/normal.yaml
 DEPENDENCIES = $(foreach file,$(SOURCES),source/$(file))
 HOST := https://api.apiblueprint.org/
 APIARY_API := apiblueprintapi
@@ -28,4 +31,4 @@ publish: apiary.apib
 	@apiary publish --api-name=$(APIARY_API)
 
 node_modules:
-	npm install hercule dredd
+	npm install hercule dredd js-yaml media-typer chai
