@@ -1,4 +1,6 @@
 _version: "2.2"
+warnings: []
+ast: null
 error:
   code: 4
   message: "base type 'A' circularly referencing itself"
@@ -6,4 +8,3 @@ error:
     -
       index: 27
       length: 9
-warnings: []

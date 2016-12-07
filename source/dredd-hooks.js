@@ -17,8 +17,8 @@ hooks.beforeEachValidation(function (transaction) {
   // Indent the request and response bodies properly
   if (type.suffix === 'json' || type.subtype === 'json') {
     // Addding extra character because of https://github.com/apiaryio/dredd/issues/674
-    transaction.expected.body = '●' + JSON.stringify(JSON.parse(transaction.expected.body)) + '●';
-    transaction.real.body = '●' + JSON.stringify(JSON.parse(transaction.real.body)) + '●';
+    transaction.expected.body = '●' + JSON.stringify(JSON.parse(transaction.expected.body), null, 2) + '●';
+    transaction.real.body = '●' + JSON.stringify(JSON.parse(transaction.real.body), null, 2) + '●';
 
     // Change content type because otherwise gavel would compare JSON objects
     transaction.expected.headers['Content-Type'] = 'text/plain';
