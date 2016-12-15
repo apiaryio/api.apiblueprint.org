@@ -4,14 +4,21 @@ var hooks = require('hooks')
   , yaml = require('js-yaml');
 
 hooks.beforeEachValidation(function (transaction) {
+  if (['/parser', '/composer'].indexOf(transaction.fullPath) == -1 ||
+      ['415', '400', '406'].indexOf(transaction.expected.statusCode) != -1) {
+
+    return;
+  }
+
   var type = typer.parse(transaction.expected.headers['Content-Type']);
 
   assert.equal(transaction.expected.headers['Content-Type'], transaction.real.headers['content-type']);
 
   // Indent the request and response bodies properly
   if (type.suffix === 'json' || type.subtype === 'json') {
-    transaction.expected.body = JSON.stringify(JSON.parse(transaction.expected.body));
-    transaction.real.body = JSON.stringify(JSON.parse(transaction.real.body));
+    // Addding extra character because of https://github.com/apiaryio/dredd/issues/674
+    transaction.expected.body = '●' + JSON.stringify(JSON.parse(transaction.expected.body), null, 2) + '●';
+    transaction.real.body = '●' + JSON.stringify(JSON.parse(transaction.real.body), null, 2) + '●';
 
     // Change content type because otherwise gavel would compare JSON objects
     transaction.expected.headers['Content-Type'] = 'text/plain';
