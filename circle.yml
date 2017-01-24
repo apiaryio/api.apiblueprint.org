@@ -10,7 +10,7 @@ dependencies:
 
 test:
   override:
-    - make test
+    - make apiary.apib
 
 deployment:
   production:
