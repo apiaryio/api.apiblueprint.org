@@ -6,6 +6,12 @@ The composition of API Blueprint is performed as it is provided by the [Matter C
 
 #### Input Media Types
 
+##### API Elements
+
+API Elements is supported, you can send an [API Elements API
+Category](http://api-elements.readthedocs.io/en/latest/element-definitions/#category-base-api-element)
+to the composer using the `application/vnd.refract+json` content type.
+
 ##### API Blueprint AST (Deprecated)
 
 API Blueprint AST support is deprecated and support will be completely removed
@@ -31,6 +37,14 @@ text/vnd.apiblueprint
 API Blueprint as defined in its [specification](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md).
 
 + Relation: compose
+
++ Request Compose API Blueprint from API Elements API (application/vnd.refract+json)
+
+        :[](fixtures/apib/normal.refract.json)
+
++ Response 200 (text/vnd.apiblueprint)
+
+        :[](fixtures/apib/normal.apib)
 
 + Request Compose API Blueprint from AST 2.0 sent as YAML (application/vnd.apiblueprint.ast+yaml; version=2.0)
 
