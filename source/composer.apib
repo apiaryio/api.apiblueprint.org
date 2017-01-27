@@ -10,7 +10,15 @@ The composition of API Blueprint is performed as it is provided by the [Matter C
 
 API Elements is supported, you can send an [API Elements API
 Category](http://api-elements.readthedocs.io/en/latest/element-definitions/#category-base-api-element)
-to the composer using the `application/vnd.refract+json` content type.
+to the composer using the `application/vnd.refract+json` content type. You may
+also send an [API Elements Parse
+Result](http://api-elements.readthedocs.io/en/latest/element-definitions/#parse-result-elements)
+as `application/vnd.refract.parse-result+json`.
+
+```
+application/vnd.refract+json
+application/vnd.refract.parse-result+json
+```
 
 ##### API Blueprint AST (Deprecated)
 
@@ -41,6 +49,14 @@ API Blueprint as defined in its [specification](https://github.com/apiaryio/api-
 + Request Compose API Blueprint from API Elements API (application/vnd.refract+json)
 
         :[](fixtures/apib/normal.refract.json)
+
++ Response 200 (text/vnd.apiblueprint)
+
+        :[](fixtures/apib/normal.apib)
+
++ Request Compose API Blueprint from API Elements Parse Result (application/vnd.refract.parse-result+json)
+
+        :[](fixtures/apib/normal.refract.parse-result.json)
 
 + Response 200 (text/vnd.apiblueprint)
 
