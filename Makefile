@@ -31,4 +31,4 @@ publish: apiary.apib
 	@apiary publish --api-name=$(APIARY_API)
 
 node_modules:
-	npm install hercule dredd js-yaml media-typer chai
+	npm install --no-optional hercule dredd js-yaml media-typer chai
