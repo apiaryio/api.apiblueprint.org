@@ -46,3 +46,13 @@ API Blueprint as defined in its [specification](https://github.com/apiaryio/api-
 + Response 200 (text/vnd.apiblueprint)
 
         :[](fixtures/apib/composer.apib)
+
++ Request Unknown Content Type (application/vnd.apiblueprint.ast+json)
+
+        {}
+
++ Response 415 (application/vnd.error+json)
+    + Attributes
+        + statusCode: 415
+        + message: ``Unsupported Content-Type `application/vnd.apiblueprint.ast+json`. Supported: application/vnd.refract+json, application/vnd.refract.parse-result+json. API Blueprint AST is no longer supported.``
+        + name: Rest Error
