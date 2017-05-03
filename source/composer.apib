@@ -2,7 +2,6 @@
 Reverse the parsing process--compose an API description format.
 
 ### Compose [POST]
-The composition of API Blueprint is performed as it is provided by the [Matter Compiler](https://github.com/apiaryio/matter_compiler) tool.
 
 #### Input Media Types
 
@@ -19,20 +18,6 @@ as `application/vnd.refract.parse-result+json`.
 application/vnd.refract+json
 application/vnd.refract.parse-result+json
 ```
-
-##### API Blueprint AST (Deprecated)
-
-API Blueprint AST support is deprecated and support will be completely removed
-from the service by February 28th 2016.
-
-```
-application/vnd.apiblueprint.ast+json
-application/vnd.apiblueprint.ast+yaml
-```
-
-Serialized API Blueprint AST represented either in its JSON or YAML format as defined in [API Blueprint AST Serialization Media Types](https://github.com/apiaryio/api-blueprint-ast).
-
-Please keep in mind that the API Blueprint AST is soon to be deprecated in favor of the API Description Parse Result Namespace.
 
 #### Output Media Types
 
@@ -61,19 +46,3 @@ API Blueprint as defined in its [specification](https://github.com/apiaryio/api-
 + Response 200 (text/vnd.apiblueprint)
 
         :[](fixtures/apib/composer.apib)
-
-+ Request Compose API Blueprint from AST 2.0 sent as YAML (application/vnd.apiblueprint.ast+yaml; version=2.0)
-
-        :[](fixtures/apib/normal.apiblueprint.ast.yaml)
-
-+ Response 200 (text/vnd.apiblueprint)
-
-        :[](fixtures/apib/normal.apib)
-
-+ Request Compose API Blueprint from AST 2.0 sent as JSON (application/vnd.apiblueprint.ast+json; version=2.0)
-
-        :[](fixtures/apib/normal.apiblueprint.ast.json)
-
-+ Response 200 (text/vnd.apiblueprint)
-
-        :[](fixtures/apib/normal.apib)
