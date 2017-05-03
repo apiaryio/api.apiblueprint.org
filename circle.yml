@@ -2,7 +2,7 @@ machine:
   ruby:
     version: 2.2.3
   node:
-    version: v0.12.7
+    version: v7.9.0
 
 dependencies:
   override:
