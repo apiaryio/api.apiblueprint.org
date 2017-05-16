@@ -24,7 +24,8 @@ content:
               - element: transition
                 meta:
                   title: GET
-                attributes: {}
+                attributes:
+                  href: /message
                 content:
                   - element: httpTransaction
                     meta: {}
