@@ -4,10 +4,6 @@ SOURCES := apiary.apib introduction.md \
 	root.apib parser.apib composer.apib \
 	fixtures/apib/normal.refract.parse-result.json \
 	fixtures/apib/normal.refract.parse-result.yaml \
-	fixtures/apib/normal.apiblueprint.parseresult.json \
-	fixtures/apib/normal.apiblueprint.parseresult.yaml \
-	fixtures/apib/normal.apiblueprint.ast.yaml \
-	fixtures/apib/normal.apiblueprint.ast.json \
 	fixtures/apib/error.apib \
 	fixtures/apib/error.refract.parse-result.yaml \
 	fixtures/swagger.yaml/normal.yaml

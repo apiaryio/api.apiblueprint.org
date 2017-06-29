@@ -34,18 +34,6 @@ application/vnd.refract.parse-result+yaml
 
 General-purpose result of the parsing operation. The parse result is in form of the Refract data structure as defined in its [specification](https://github.com/refractproject/refract-spec). The parse result data comply with the [Parse Result Namespace](https://github.com/refractproject/refract-spec/blob/master/namespaces/parse-result-namespace.md).
 
-##### API Blueprint Parse Result (deprecated)
-
-API Blueprint Parse Result support is deprecated and support will be completely
-removed from the service by February 28th 2016.
-
-```
-application/vnd.apiblueprint.parseresult+json
-application/vnd.apiblueprint.parseresult+yaml
-```
-
-API Blueprint Parse Result is just serialized API Blueprint AST (`application/vnd.apiblueprint.ast+json` or `application/vnd.apiblueprint.ast+yaml`) alongside with parser annotations (source map, warnings and errors) defined in [Parse Result Media Types](https://github.com/apiaryio/api-blueprint-ast/blob/master/Parse%20Result.md).
-
 + Relation: parse
 
 + Request Parse API Blueprint into Parse Result Namespace as JSON (text/vnd.apiblueprint)
