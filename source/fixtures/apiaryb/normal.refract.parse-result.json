@@ -1,7 +1,5 @@
 {
   "element": "parseResult",
-  "meta": {},
-  "attributes": {},
   "content": [
     {
       "element": "category",
@@ -11,7 +9,6 @@
         ],
         "title": "Sample API"
       },
-      "attributes": {},
       "content": [
         {
           "element": "category",
@@ -21,11 +18,9 @@
               "resourceGroup"
             ]
           },
-          "attributes": {},
           "content": [
             {
               "element": "resource",
-              "meta": {},
               "attributes": {
                 "href": "/message"
               },
@@ -41,12 +36,9 @@
                   "content": [
                     {
                       "element": "httpTransaction",
-                      "meta": {},
-                      "attributes": {},
                       "content": [
                         {
                           "element": "httpRequest",
-                          "meta": {},
                           "attributes": {
                             "method": "GET",
                             "headers": null
@@ -55,29 +47,20 @@
                         },
                         {
                           "element": "httpResponse",
-                          "meta": {},
                           "attributes": {
                             "statusCode": 200,
                             "headers": {
                               "element": "httpHeaders",
-                              "meta": {},
-                              "attributes": {},
                               "content": [
                                 {
                                   "element": "member",
-                                  "meta": {},
-                                  "attributes": {},
                                   "content": {
                                     "key": {
                                       "element": "string",
-                                      "meta": {},
-                                      "attributes": {},
                                       "content": "Content-Type"
                                     },
                                     "value": {
                                       "element": "string",
-                                      "meta": {},
-                                      "attributes": {},
                                       "content": "text/plain"
                                     }
                                   }
@@ -93,7 +76,6 @@
                                   "messageBody"
                                 ]
                               },
-                              "attributes": {},
                               "content": "Hello World!"
                             }
                           ]
