@@ -1,23 +1,18 @@
 element: parseResult
-meta: {}
-attributes: {}
 content:
   - element: category
     meta:
       classes:
         - api
       title: Sample API
-    attributes: {}
     content:
       - element: category
         meta:
           title: null
           classes:
             - resourceGroup
-        attributes: {}
         content:
           - element: resource
-            meta: {}
             attributes:
               href: /message
             content:
@@ -28,43 +23,30 @@ content:
                   href: /message
                 content:
                   - element: httpTransaction
-                    meta: {}
-                    attributes: {}
                     content:
                       - element: httpRequest
-                        meta: {}
                         attributes:
                           method: GET
                           headers: null
                         content: []
                       - element: httpResponse
-                        meta: {}
                         attributes:
                           statusCode: 200
                           headers:
                             element: httpHeaders
-                            meta: {}
-                            attributes: {}
                             content:
                               - element: member
-                                meta: {}
-                                attributes: {}
                                 content:
                                   key:
                                     element: string
-                                    meta: {}
-                                    attributes: {}
                                     content: Content-Type
                                   value:
                                     element: string
-                                    meta: {}
-                                    attributes: {}
                                     content: text/plain
                         content:
                           - element: asset
                             meta:
                               classes:
                                 - messageBody
-                            attributes: {}
                             content: Hello World!
 
