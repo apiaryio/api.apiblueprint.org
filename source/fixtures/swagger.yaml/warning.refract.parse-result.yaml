@@ -1,40 +1,28 @@
 element: parseResult
-meta: {}
-attributes: {}
 content:
   - element: category
     meta:
       classes:
         - api
       title: Swagger
-    attributes: {}
     content:
       - element: resource
-        meta: {}
         attributes:
           href: /test
         content:
           - element: transition
             meta:
               title: Test get
-            attributes: {}
             content:
               - element: copy
-                meta: {}
-                attributes: {}
                 content: Test description
               - element: httpTransaction
-                meta: {}
-                attributes: {}
                 content:
                   - element: httpRequest
-                    meta: {}
                     attributes:
                       method: GET
                     content: []
                   - element: httpResponse
-                    meta: {}
-                    attributes: {}
                     content: []
   - element: annotation
     meta:
@@ -42,7 +30,6 @@ content:
         - warning
       links:
         - element: link
-          meta: {}
           attributes:
             relation: origin
             href: 'http://docs.apiary.io/validations/swagger#refract-not-supported'
@@ -51,8 +38,6 @@ content:
       code: 3
       sourceMap:
         - element: sourceMap
-          meta: {}
-          attributes: {}
           content:
             - - 167
               - 46

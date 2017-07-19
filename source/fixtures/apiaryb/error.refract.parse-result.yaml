@@ -1,6 +1,4 @@
 element: parseResult
-meta: {}
-attributes: {}
 content:
   - element: annotation
     meta:
@@ -9,8 +7,6 @@ content:
     attributes:
       sourceMap:
         - element: sourceMap
-          meta: {}
-          attributes: {}
           content:
             - - 31
               - 1

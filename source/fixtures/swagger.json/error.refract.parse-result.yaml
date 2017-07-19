@@ -1,6 +1,4 @@
 element: parseResult
-meta: {}
-attributes: {}
 content:
   - element: annotation
     meta:
@@ -8,7 +6,6 @@ content:
         - error
       links:
         - element: link
-          meta: {}
           attributes:
             relation: origin
             href: 'http://docs.apiary.io/validations/swagger#swagger-validation'
@@ -17,8 +14,6 @@ content:
       code: 4
       sourceMap:
         - element: sourceMap
-          meta: {}
-          attributes: {}
           content:
             - - 24
               - 37
