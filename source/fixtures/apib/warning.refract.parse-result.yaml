@@ -1,57 +1,50 @@
-element: "parseResult"
+element: parseResult
 content:
-  -
-    element: "category"
+  - element: category
     meta:
       classes:
-        - "api"
-      title: "Hello"
+        - api
+      title: Hello
     content:
-      -
-        element: "category"
+      - element: category
         meta:
           classes:
-            - "resourceGroup"
-          title: ""
+            - resourceGroup
+          title: ''
         content:
-          -
-            element: "resource"
+          - element: resource
             meta:
-              title: ""
+              title: ''
             attributes:
-              href: "/"
+              href: /
             content:
-              -
-                element: "transition"
+              - element: transition
                 meta:
-                  title: ""
+                  title: ''
                 content:
-                  -
-                    element: "httpTransaction"
+                  - element: httpTransaction
                     content:
-                      -
-                        element: "httpRequest"
+                      - element: httpRequest
                         attributes:
-                          method: "GET"
+                          method: GET
                         content: []
-                      -
-                        element: "httpResponse"
+                      - element: httpResponse
                         attributes:
-                          statusCode: "204"
+                          statusCode: '204'
                         content: []
-  -
-    element: "annotation"
+  - element: annotation
     meta:
       classes:
-        - "warning"
+        - warning
     attributes:
       code: 3
       sourceMap:
-        -
-          element: "sourceMap"
+        - element: sourceMap
           content:
-            -
-              - 18
+            - - 18
               - 14
-    content: "no parameters specified, expected a nested list of parameters, one parameter per list item"
+    content: >-
+      no parameters specified, expected a nested list of parameters, one
+      parameter per list item
+
 
