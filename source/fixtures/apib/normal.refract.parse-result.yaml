@@ -1,62 +1,54 @@
-element: "parseResult"
+element: parseResult
 content:
-  -
-    element: "category"
+  - element: category
     meta:
       classes:
-        - "api"
-      title: "Hello API"
+        - api
+      title: Hello API
     content:
-      -
-        element: "category"
+      - element: category
         meta:
           classes:
-            - "resourceGroup"
-          title: ""
+            - resourceGroup
+          title: ''
         content:
-          -
-            element: "resource"
+          - element: resource
             meta:
-              title: ""
+              title: ''
             attributes:
-              href: "/message"
+              href: /message
             content:
-              -
-                element: "transition"
+              - element: transition
                 meta:
-                  title: ""
+                  title: ''
                 content:
-                  -
-                    element: "httpTransaction"
+                  - element: httpTransaction
                     content:
-                      -
-                        element: "httpRequest"
+                      - element: httpRequest
                         attributes:
-                          method: "GET"
+                          method: GET
                         content: []
-                      -
-                        element: "httpResponse"
+                      - element: httpResponse
                         attributes:
-                          statusCode: "200"
+                          statusCode: '200'
                           headers:
-                            element: "httpHeaders"
+                            element: httpHeaders
                             content:
-                              -
-                                element: "member"
+                              - element: member
                                 content:
                                   key:
-                                    element: "string"
-                                    content: "Content-Type"
+                                    element: string
+                                    content: Content-Type
                                   value:
-                                    element: "string"
-                                    content: "text/plain"
+                                    element: string
+                                    content: text/plain
                         content:
-                          -
-                            element: "asset"
+                          - element: asset
                             meta:
                               classes:
-                                - "messageBody"
+                                - messageBody
                             attributes:
-                              contentType: "text/plain"
-                            content: "Hello World!\n"
+                              contentType: text/plain
+                            content: |
+                              Hello World!
 
