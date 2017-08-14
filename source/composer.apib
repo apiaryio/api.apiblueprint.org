@@ -47,6 +47,32 @@ API Blueprint as defined in its [specification](https://github.com/apiaryio/api-
 
         :[](fixtures/apib/composer.apib)
 
++ Request Compose API Blueprint from API Elements 1.0 Parse Result (application/vnd.refract.parse-result+json; version=1.0)
+
+        :[](fixtures/apib/normal.refract.parse-result.1.0.json)
+
++ Response 200 (text/vnd.apiblueprint)
+
+        :[](fixtures/apib/composer.apib)
+
++ Request Compose API Blueprint from API Elements 0.6 Parse Result (application/vnd.refract.parse-result+json; version=0.6)
+
+        :[](fixtures/apib/normal.refract.parse-result.json)
+
++ Response 200 (text/vnd.apiblueprint)
+
+        :[](fixtures/apib/composer.apib)
+
++ Request Unknown Refract Version (application/vnd.refract.parse-result+json; version=2.0)
+
+        {}
+
++ Response 415 (application/vnd.error+json)
+    + Attributes
+        + statusCode: 415 (number)
+        + message: ``Unsupported Refract Serialisation version `2.0`. Supported: 0.6, 1.0.``
+        + name: Rest Error
+
 + Request Unknown Content Type (application/vnd.apiblueprint.ast+json)
 
         {}
