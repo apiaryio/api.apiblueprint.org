@@ -1,0 +1,46 @@
+{
+  "element": "parseResult",
+  "content": [
+    {
+      "element": "annotation",
+      "meta": {
+        "classes": {
+          "element": "array",
+          "content": [
+            {
+              "element": "string",
+              "content": "error"
+            }
+          ]
+        }
+      },
+      "attributes": {
+        "sourceMap": {
+          "element": "array",
+          "content": [
+            {
+              "element": "sourceMap",
+              "content": [
+                {
+                  "element": "array",
+                  "content": [
+                    {
+                      "element": "number",
+                      "content": 31
+                    },
+                    {
+                      "element": "number",
+                      "content": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "content": "Expected \"COPY\", \"DELETE\", \"GET\", \"HEAD\", \"LOCK\", \"MKCOL\", \"MOVE\", \"OPTIONS\", \"PATCH\", \"POST\", \"PROPPATCH\", \"PUT\" or \"UNLOCK\" but end of input found."
+    }
+  ]
+}
+

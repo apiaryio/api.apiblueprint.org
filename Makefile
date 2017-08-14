@@ -8,10 +8,10 @@ SOURCE_FIXTURES := \
 	swagger.yaml/normal swagger.yaml/warning swagger.yaml/error
 
 FIXTURES :=  \
-	source/fixtures/apib/normal.refract.parse-result.1.0.json \
-	source/fixtures/apib/normal.refract.parse-result.1.0.yaml \
 	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.json) \
-	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.yaml)
+	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.yaml) \
+	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.1.0.json) \
+	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.1.0.yaml)
 
 SOURCES := apiary.apib introduction.md \
 	root.apib parser.apib composer.apib \
@@ -76,6 +76,14 @@ source/fixtures/apiaryb/%.refract.parse-result.yaml: source/fixtures/apiaryb/%.a
 	@echo "Generating $@"
 	@$(FURY_06_YAML) $< > $@ || true
 
+source/fixtures/apiaryb/%.refract.parse-result.1.0.json: source/fixtures/apiaryb/%.apiaryb
+	@echo "Generating $@"
+	@$(FURY_JSON) $< > $@ || true
+
+source/fixtures/apiaryb/%.refract.parse-result.1.0.yaml: source/fixtures/apiaryb/%.apiaryb
+	@echo "Generating $@"
+	@$(FURY_YAML) $< > $@ || true
+
 source/fixtures/swagger.json/%.refract.parse-result.json: source/fixtures/swagger.json/%.json
 	@echo "Generating $@"
 	@$(FURY_06_JSON) $< > $@ || true
@@ -84,6 +92,14 @@ source/fixtures/swagger.json/%.refract.parse-result.yaml: source/fixtures/swagge
 	@echo "Generating $@"
 	@$(FURY_06_YAML) $< > $@ || true
 
+source/fixtures/swagger.json/%.refract.parse-result.1.0.json: source/fixtures/swagger.json/%.json
+	@echo "Generating $@"
+	@$(FURY_JSON) $< > $@ || true
+
+source/fixtures/swagger.json/%.refract.parse-result.1.0.yaml: source/fixtures/swagger.json/%.json
+	@echo "Generating $@"
+	@$(FURY_YAML) $< > $@ || true
+
 source/fixtures/swagger.yaml/%.refract.parse-result.json: source/fixtures/swagger.yaml/%.yaml
 	@echo "Generating $@"
 	@$(FURY_06_JSON) $< > $@ || true
@@ -91,6 +107,14 @@ source/fixtures/swagger.yaml/%.refract.parse-result.json: source/fixtures/swagge
 source/fixtures/swagger.yaml/%.refract.parse-result.yaml: source/fixtures/swagger.yaml/%.yaml
 	@echo "Generating $@"
 	@$(FURY_06_YAML) $< > $@ || true
+
+source/fixtures/swagger.yaml/%.refract.parse-result.1.0.json: source/fixtures/swagger.yaml/%.yaml
+	@echo "Generating $@"
+	@$(FURY_JSON) $< > $@ || true
+
+source/fixtures/swagger.yaml/%.refract.parse-result.1.0.yaml: source/fixtures/swagger.yaml/%.yaml
+	@echo "Generating $@"
+	@$(FURY_YAML) $< > $@ || true
 
 node_modules:
 	npm install --no-optional hercule dredd js-yaml media-typer chai fury-cli

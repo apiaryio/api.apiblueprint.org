@@ -1,0 +1,81 @@
+element: parseResult
+content:
+  - element: category
+    meta:
+      classes:
+        element: array
+        content:
+          - element: string
+            content: api
+      title:
+        element: string
+        content: Hello
+    content:
+      - element: category
+        meta:
+          classes:
+            element: array
+            content:
+              - element: string
+                content: resourceGroup
+          title:
+            element: string
+            content: ''
+        content:
+          - element: resource
+            meta:
+              title:
+                element: string
+                content: ''
+            attributes:
+              href:
+                element: string
+                content: /
+            content:
+              - element: transition
+                meta:
+                  title:
+                    element: string
+                    content: ''
+                content:
+                  - element: httpTransaction
+                    content:
+                      - element: httpRequest
+                        attributes:
+                          method:
+                            element: string
+                            content: GET
+                        content: []
+                      - element: httpResponse
+                        attributes:
+                          statusCode:
+                            element: string
+                            content: '204'
+                        content: []
+  - element: annotation
+    meta:
+      classes:
+        element: array
+        content:
+          - element: string
+            content: warning
+    attributes:
+      code:
+        element: number
+        content: 3
+      sourceMap:
+        element: array
+        content:
+          - element: sourceMap
+            content:
+              - element: array
+                content:
+                  - element: number
+                    content: 18
+                  - element: number
+                    content: 14
+    content: >-
+      no parameters specified, expected a nested list of parameters, one
+      parameter per list item
+
+
