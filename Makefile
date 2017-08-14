@@ -9,6 +9,7 @@ SOURCE_FIXTURES := \
 
 FIXTURES :=  \
 	source/fixtures/apib/normal.refract.parse-result.1.0.json \
+	source/fixtures/apib/normal.refract.parse-result.1.0.yaml \
 	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.json) \
 	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.yaml)
 
@@ -26,6 +27,7 @@ APIARY_API := apiblueprintapi
 FURY_06_JSON = fury -f 'application/vnd.refract.parse-result+json; version=0.6'
 FURY_06_YAML = fury -f 'application/vnd.refract.parse-result+yaml; version=0.6'
 FURY_JSON = fury -f 'application/vnd.refract.parse-result+json'
+FURY_YAML = fury -f 'application/vnd.refract.parse-result+yaml'
 
 apiary.apib: node_modules $(DEPENDENCIES)
 	@echo "Transcluding API Blueprint"
@@ -61,6 +63,10 @@ source/fixtures/apib/%.refract.parse-result.1.0.json: source/fixtures/apib/%.api
 source/fixtures/apib/%.refract.parse-result.yaml: source/fixtures/apib/%.apib
 	@echo "Generating $@"
 	@$(FURY_06_YAML) $< > $@ || true
+
+source/fixtures/apib/%.refract.parse-result.1.0.yaml: source/fixtures/apib/%.apib
+	@echo "Generating $@"
+	@$(FURY_YAML) $< > $@ || true
 
 source/fixtures/apiaryb/%.refract.parse-result.json: source/fixtures/apiaryb/%.apiaryb
 	@echo "Generating $@"
