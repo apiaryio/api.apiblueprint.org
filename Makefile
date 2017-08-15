@@ -1,15 +1,31 @@
 HERCULE := ./node_modules/.bin/hercule
 DREDD := ./node_modules/.bin/dredd
+
+SOURCE_FIXTURES := \
+	apib/normal apib/warning apib/error \
+	apiaryb/normal apiaryb/error \
+	swagger.json/normal swagger.json/warning swagger.json/error \
+	swagger.yaml/normal swagger.yaml/warning swagger.yaml/error
+
+FIXTURES :=  \
+	source/fixtures/apib/normal.refract.parse-result.1.0.json \
+	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.json) \
+	$(foreach path,$(SOURCE_FIXTURES),source/fixtures/$(path).refract.parse-result.yaml)
+
 SOURCES := apiary.apib introduction.md \
 	root.apib parser.apib composer.apib \
-	fixtures/apib/normal.refract.parse-result.json \
-	fixtures/apib/normal.refract.parse-result.yaml \
 	fixtures/apib/error.apib \
-	fixtures/apib/error.refract.parse-result.yaml \
 	fixtures/swagger.yaml/normal.yaml
-DEPENDENCIES = $(foreach file,$(SOURCES),source/$(file))
+
+DEPENDENCIES = $(foreach file,$(SOURCES),source/$(file)) \
+	$(FIXTURES)
+
 HOST := https://api.apiblueprint.org/
 APIARY_API := apiblueprintapi
+
+FURY_06_JSON = fury -f 'application/vnd.refract.parse-result+json; version=0.6'
+FURY_06_YAML = fury -f 'application/vnd.refract.parse-result+yaml; version=0.6'
+FURY_JSON = fury -f 'application/vnd.refract.parse-result+json'
 
 apiary.apib: node_modules $(DEPENDENCIES)
 	@echo "Transcluding API Blueprint"
@@ -27,35 +43,48 @@ publish: apiary.apib
 	@apiary publish --api-name=$(APIARY_API)
 
 .PHONY: fixtures
-fixtures:
-	fury source/fixtures/apiaryb/error.apiaryb -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/apiaryb/error.refract.parse-result.json || true
-	fury source/fixtures/apiaryb/error.apiaryb -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/apiaryb/error.refract.parse-result.yaml || true
-	fury source/fixtures/apiaryb/normal.apiaryb -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/apiaryb/normal.refract.parse-result.json
-	fury source/fixtures/apiaryb/normal.apiaryb -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/apiaryb/normal.refract.parse-result.yaml
-	fury source/fixtures/apib/normal.apib -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/apib/normal.refract.parse-result.json
-	fury source/fixtures/apib/normal.apib -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/apib/normal.refract.parse-result.yaml
-	fury source/fixtures/apib/warning.apib -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/apib/warning.refract.parse-result.json
-	fury source/fixtures/apib/warning.apib -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/apib/warning.refract.parse-result.yaml
-	fury source/fixtures/apib/error.apib -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/apib/error.refract.parse-result.json || true
-	fury source/fixtures/apib/error.apib -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/apib/error.refract.parse-result.yaml || true
-	fury source/fixtures/swagger.json/error.json -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.json/error.refract.parse-result.json || true
-	fury source/fixtures/swagger.json/error.json -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.json/error.refract.parse-result.yaml || true
-	fury source/fixtures/swagger.json/warning.json -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.json/warning.refract.parse-result.json
-	fury source/fixtures/swagger.json/warning.json -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.json/warning.refract.parse-result.yaml
-	fury source/fixtures/swagger.json/normal.json -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.json/normal.refract.parse-result.json
-	fury source/fixtures/swagger.json/normal.json -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.json/normal.refract.parse-result.yaml
-	fury source/fixtures/swagger.json/error.json -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.json/error.refract.parse-result.json || true
-	fury source/fixtures/swagger.json/error.json -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.json/error.refract.parse-result.yaml || true
-	fury source/fixtures/swagger.json/warning.json -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.json/warning.refract.parse-result.json
-	fury source/fixtures/swagger.json/warning.json -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.json/warning.refract.parse-result.yaml
-	fury source/fixtures/swagger.json/normal.json -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.json/normal.refract.parse-result.json
-	fury source/fixtures/swagger.json/normal.json -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.json/normal.refract.parse-result.yaml
-	fury source/fixtures/swagger.yaml/error.yaml -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.yaml/error.refract.parse-result.json || true
-	fury source/fixtures/swagger.yaml/error.yaml -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.yaml/error.refract.parse-result.yaml || true
-	fury source/fixtures/swagger.yaml/warning.yaml -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.yaml/warning.refract.parse-result.json
-	fury source/fixtures/swagger.yaml/warning.yaml -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.yaml/warning.refract.parse-result.yaml
-	fury source/fixtures/swagger.yaml/normal.yaml -f 'application/vnd.refract.parse-result+json; version=0.6' > source/fixtures/swagger.yaml/normal.refract.parse-result.json
-	fury source/fixtures/swagger.yaml/normal.yaml -f 'application/vnd.refract.parse-result+yaml; version=0.6' > source/fixtures/swagger.yaml/normal.refract.parse-result.yaml
+fixtures: $(FIXTURES)
+
+.PHONY: cleanfixtures
+cleanfixtures:
+	@echo "Cleaning Fixtures"
+	@rm $(FIXTURES)
+
+source/fixtures/apib/%.refract.parse-result.json: source/fixtures/apib/%.apib
+	@echo "Generating $@"
+	@$(FURY_06_JSON) $< > $@ || true
+
+source/fixtures/apib/%.refract.parse-result.1.0.json: source/fixtures/apib/%.apib
+	@echo "Generating $@"
+	@$(FURY_JSON) $< > $@ || true
+
+source/fixtures/apib/%.refract.parse-result.yaml: source/fixtures/apib/%.apib
+	@echo "Generating $@"
+	@$(FURY_06_YAML) $< > $@ || true
+
+source/fixtures/apiaryb/%.refract.parse-result.json: source/fixtures/apiaryb/%.apiaryb
+	@echo "Generating $@"
+	@$(FURY_06_JSON) $< > $@ || true
+
+source/fixtures/apiaryb/%.refract.parse-result.yaml: source/fixtures/apiaryb/%.apiaryb
+	@echo "Generating $@"
+	@$(FURY_06_YAML) $< > $@ || true
+
+source/fixtures/swagger.json/%.refract.parse-result.json: source/fixtures/swagger.json/%.json
+	@echo "Generating $@"
+	@$(FURY_06_JSON) $< > $@ || true
+
+source/fixtures/swagger.json/%.refract.parse-result.yaml: source/fixtures/swagger.json/%.json
+	@echo "Generating $@"
+	@$(FURY_06_YAML) $< > $@ || true
+
+source/fixtures/swagger.yaml/%.refract.parse-result.json: source/fixtures/swagger.yaml/%.yaml
+	@echo "Generating $@"
+	@$(FURY_06_JSON) $< > $@ || true
+
+source/fixtures/swagger.yaml/%.refract.parse-result.yaml: source/fixtures/swagger.yaml/%.yaml
+	@echo "Generating $@"
+	@$(FURY_06_YAML) $< > $@ || true
 
 node_modules:
 	npm install --no-optional hercule dredd js-yaml media-typer chai fury-cli
