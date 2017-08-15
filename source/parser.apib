@@ -64,6 +64,62 @@ General-purpose result of the parsing operation. The parse result is in form of 
 
         :[](fixtures/apib/normal.refract.parse-result.yaml)
 
++ Request Parse API Blueprint into Parse Result Namespace as JSON 1.0 (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+json; version=1.0
+
+    + Body
+
+            :[](fixtures/apib/normal.apib)
+
++ Response 200 (application/vnd.refract.parse-result+json; version=1.0)
+
+        :[](fixtures/apib/normal.refract.parse-result.1.0.json)
+
++ Request Parse API Blueprint into Parse Result Namespace as YAML 1.0 (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+yaml; version=1.0
+
+    + Body
+
+            :[](fixtures/apib/normal.apib)
+
++ Response 200 (application/vnd.refract.parse-result+yaml; version=1.0)
+
+        :[](fixtures/apib/normal.refract.parse-result.1.0.yaml)
+
++ Request Parse API Blueprint into Parse Result Namespace as JSON 0.6 (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+json; version=0.6
+
+    + Body
+
+            :[](fixtures/apib/normal.apib)
+
++ Response 200 (application/vnd.refract.parse-result+json; version=0.6)
+
+        :[](fixtures/apib/normal.refract.parse-result.json)
+
++ Request Parse API Blueprint into Parse Result Namespace as YAML 0.6 (text/vnd.apiblueprint)
+
+    + Headers
+
+            Accept: application/vnd.refract.parse-result+yaml; version=0.6
+
+    + Body
+
+            :[](fixtures/apib/normal.apib)
+
++ Response 200 (application/vnd.refract.parse-result+yaml; version=0.6)
+
+        :[](fixtures/apib/normal.refract.parse-result.yaml)
+
 + Request Invalid Document (text/vnd.apiblueprint)
 
     + Headers
