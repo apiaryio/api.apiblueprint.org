@@ -68,7 +68,7 @@ General-purpose result of the parsing operation. The parse result is in form of 
 
     + Headers
 
-            Accept: application/vnd.refract.parse-result+json
+            Accept: application/vnd.refract.parse-result+json; version=1.0
 
     + Body
 
@@ -82,7 +82,7 @@ General-purpose result of the parsing operation. The parse result is in form of 
 
     + Headers
 
-            Accept: application/vnd.refract.parse-result+yaml
+            Accept: application/vnd.refract.parse-result+yaml; version=1.0
 
     + Body
 
@@ -96,13 +96,13 @@ General-purpose result of the parsing operation. The parse result is in form of 
 
     + Headers
 
-            Accept: application/vnd.refract.parse-result+json
+            Accept: application/vnd.refract.parse-result+json; version=0.6
 
     + Body
 
             :[](fixtures/apib/normal.apib)
 
-+ Response 200 (application/vnd.refract.parse-result+json; version=1.0)
++ Response 200 (application/vnd.refract.parse-result+json; version=0.6)
 
         :[](fixtures/apib/normal.refract.parse-result.json)
 
@@ -110,13 +110,13 @@ General-purpose result of the parsing operation. The parse result is in form of 
 
     + Headers
 
-            Accept: application/vnd.refract.parse-result+yaml
+            Accept: application/vnd.refract.parse-result+yaml; version=0.6
 
     + Body
 
             :[](fixtures/apib/normal.apib)
 
-+ Response 200 (application/vnd.refract.parse-result+yaml; version=1.0)
++ Response 200 (application/vnd.refract.parse-result+yaml; version=0.6)
 
         :[](fixtures/apib/normal.refract.parse-result.yaml)
 
