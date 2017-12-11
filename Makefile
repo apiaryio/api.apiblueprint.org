@@ -1,5 +1,6 @@
 HERCULE := ./node_modules/.bin/hercule
 DREDD := ./node_modules/.bin/dredd
+FURY := ./node_modules/.bin/fury
 
 SOURCE_FIXTURES := \
 	apib/normal apib/warning apib/error \
@@ -24,10 +25,10 @@ DEPENDENCIES = $(foreach file,$(SOURCES),source/$(file)) \
 HOST := https://api.apiblueprint.org/
 APIARY_API := apiblueprintapi
 
-FURY_06_JSON = fury -f 'application/vnd.refract.parse-result+json; version=0.6'
-FURY_06_YAML = fury -f 'application/vnd.refract.parse-result+yaml; version=0.6'
-FURY_JSON = fury -f 'application/vnd.refract.parse-result+json'
-FURY_YAML = fury -f 'application/vnd.refract.parse-result+yaml'
+FURY_06_JSON = $(FURY) -f 'application/vnd.refract.parse-result+json; version=0.6'
+FURY_06_YAML = $(FURY) -f 'application/vnd.refract.parse-result+yaml; version=0.6'
+FURY_JSON = $(FURY) -f 'application/vnd.refract.parse-result+json'
+FURY_YAML = $(FURY) -f 'application/vnd.refract.parse-result+yaml'
 
 apiary.apib: node_modules $(DEPENDENCIES)
 	@echo "Transcluding API Blueprint"
