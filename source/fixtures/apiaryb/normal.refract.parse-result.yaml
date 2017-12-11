@@ -28,7 +28,6 @@ content:
                         attributes:
                           method: GET
                           headers: null
-                        content: []
                       - element: httpResponse
                         attributes:
                           statusCode: 200

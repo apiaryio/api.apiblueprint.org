@@ -13,8 +13,7 @@
             "attributes": {
               "relation": "origin",
               "href": "http://docs.apiary.io/validations/swagger#swagger-validation"
-            },
-            "content": []
+            }
           }
         ]
       },

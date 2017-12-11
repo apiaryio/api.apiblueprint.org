@@ -18,7 +18,6 @@ content:
               href:
                 element: string
                 content: 'http://docs.apiary.io/validations/swagger#swagger-validation'
-            content: []
     attributes:
       code:
         element: number

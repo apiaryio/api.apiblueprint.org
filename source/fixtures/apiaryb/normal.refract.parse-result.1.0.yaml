@@ -48,7 +48,6 @@ content:
                           headers:
                             element: 'null'
                             content: null
-                        content: []
                       - element: httpResponse
                         attributes:
                           statusCode:

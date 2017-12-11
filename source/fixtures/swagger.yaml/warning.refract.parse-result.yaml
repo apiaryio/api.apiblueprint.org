@@ -21,9 +21,7 @@ content:
                   - element: httpRequest
                     attributes:
                       method: GET
-                    content: []
                   - element: httpResponse
-                    content: []
   - element: annotation
     meta:
       classes:
@@ -33,7 +31,6 @@ content:
           attributes:
             relation: origin
             href: 'http://docs.apiary.io/validations/swagger#refract-not-supported'
-          content: []
     attributes:
       code: 3
       sourceMap:

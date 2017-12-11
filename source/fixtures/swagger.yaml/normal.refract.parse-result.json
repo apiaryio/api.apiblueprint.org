@@ -33,8 +33,7 @@
                       "element": "httpRequest",
                       "attributes": {
                         "method": "GET"
-                      },
-                      "content": []
+                      }
                     },
                     {
                       "element": "httpResponse",

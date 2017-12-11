@@ -45,13 +45,11 @@ content:
                           method:
                             element: string
                             content: GET
-                        content: []
                       - element: httpResponse
                         attributes:
                           statusCode:
                             element: string
                             content: '204'
-                        content: []
   - element: annotation
     meta:
       classes:
