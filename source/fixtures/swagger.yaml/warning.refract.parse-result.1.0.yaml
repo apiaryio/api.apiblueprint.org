@@ -32,9 +32,7 @@ content:
                       method:
                         element: string
                         content: GET
-                    content: []
                   - element: httpResponse
-                    content: []
   - element: annotation
     meta:
       classes:
@@ -54,7 +52,6 @@ content:
                 element: string
                 content: >-
                   http://docs.apiary.io/validations/swagger#refract-not-supported
-            content: []
     attributes:
       code:
         element: number

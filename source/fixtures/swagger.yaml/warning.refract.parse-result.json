@@ -33,12 +33,10 @@
                       "element": "httpRequest",
                       "attributes": {
                         "method": "GET"
-                      },
-                      "content": []
+                      }
                     },
                     {
-                      "element": "httpResponse",
-                      "content": []
+                      "element": "httpResponse"
                     }
                   ]
                 }
@@ -60,8 +58,7 @@
             "attributes": {
               "relation": "origin",
               "href": "http://docs.apiary.io/validations/swagger#refract-not-supported"
-            },
-            "content": []
+            }
           }
         ]
       },

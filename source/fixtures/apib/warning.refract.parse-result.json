@@ -41,15 +41,13 @@
                           "element": "httpRequest",
                           "attributes": {
                             "method": "GET"
-                          },
-                          "content": []
+                          }
                         },
                         {
                           "element": "httpResponse",
                           "attributes": {
                             "statusCode": "204"
-                          },
-                          "content": []
+                          }
                         }
                       ]
                     }
