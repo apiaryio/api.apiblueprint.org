@@ -42,7 +42,8 @@
                           "attributes": {
                             "method": "GET",
                             "headers": null
-                          }
+                          },
+                          "content": []
                         },
                         {
                           "element": "httpResponse",
