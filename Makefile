@@ -41,7 +41,9 @@ clean:
 	@echo "Cleaning"
 	@rm -fr apiary.apib
 
-publish: apiary.apib
+publish: bundler apiary.apib publishOnly
+
+publishOnly:
 	@echo "Uploading blueprint to Apiary"
 	@apiary publish --api-name=$(APIARY_API)
 
@@ -119,3 +121,6 @@ source/fixtures/swagger.yaml/%.refract.parse-result.1.0.yaml: source/fixtures/sw
 
 node_modules:
 	npm install --no-optional hercule dredd js-yaml media-typer chai fury-cli
+
+bundler:
+	gem install apiaryio
