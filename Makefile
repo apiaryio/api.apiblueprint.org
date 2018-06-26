@@ -41,9 +41,10 @@ clean:
 	@echo "Cleaning"
 	@rm -fr apiary.apib
 
-publish: apiary.apib
+.PHONY: publish
+publish: gems
 	@echo "Uploading blueprint to Apiary"
-	@apiary publish --api-name=$(APIARY_API)
+	@bundle exec apiary publish --api-name=$(APIARY_API)
 
 .PHONY: fixtures
 fixtures: $(FIXTURES)
@@ -118,4 +119,7 @@ source/fixtures/swagger.yaml/%.refract.parse-result.1.0.yaml: source/fixtures/sw
 	@$(FURY_YAML) $< > $@ || true
 
 node_modules:
-	npm install --no-optional hercule dredd js-yaml media-typer chai fury-cli
+	@npm install --no-optional hercule dredd js-yaml media-typer chai fury-cli
+
+gems:
+	@bundle install --path=gems

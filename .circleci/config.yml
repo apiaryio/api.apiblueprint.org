@@ -1,0 +1,42 @@
+version: 2
+
+workflows:
+  version: 2
+
+  build:
+    jobs:
+      - generate
+      - publish:
+          requires:
+            - generate
+          filters:
+            branches:
+              only:
+                - master
+
+jobs:
+  generate:
+    docker:
+      - image: node:8
+    steps:
+      - checkout
+      - run:
+          name: Generate API Blueprint
+          command: make apiary.apib
+      - persist_to_workspace:
+          root: .
+          paths:
+            - apiary.apib
+            - Makefile
+            - Gemfile
+            - Gemfile.lock
+
+  publish:
+    docker:
+      - image: ruby:2.5.1
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Publish API Blueprint
+          command: make publish
