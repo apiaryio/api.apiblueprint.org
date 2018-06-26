@@ -42,8 +42,7 @@ clean:
 	@rm -fr apiary.apib
 
 .PHONY: publish
-
-publish: apiary.apib gems
+publish: gems
 	@echo "Uploading blueprint to Apiary"
 	@bundle exec apiary publish --api-name=$(APIARY_API)
 

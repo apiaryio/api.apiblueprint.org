@@ -28,16 +28,15 @@ jobs:
           paths:
             - apiary.apib
             - Makefile
+            - Gemfile
+            - Gemfile.lock
 
   publish:
     docker:
-      - image: ruby:2.4.1
+      - image: ruby:2.5.1
     steps:
       - attach_workspace:
           at: .
       - run:
-          name: Install Apiary CLI
-          command: make bundler
-      - run:
           name: Publish API Blueprint
-          command: make publishOnly
+          command: make publish
