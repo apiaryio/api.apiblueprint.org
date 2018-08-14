@@ -147,9 +147,7 @@ General-purpose result of the parsing operation. The parse result is in form of 
 + Response 415 (application/vnd.error+json)
 
         {
-          "statusCode": 415,
-          "message": "",
-          "name": "Rest Error"
+          "message": "Content-Type \"undefined\" is not supported. Supported MIME types: text/vnd.apiblueprint, text/vnd.legacyblueprint, application/swagger"
         }
 
 + Request Unsupported Output Media Type (application/swagger+yaml)
@@ -165,7 +163,5 @@ General-purpose result of the parsing operation. The parse result is in form of 
 + Response 406 (application/vnd.error+json)
 
         {
-          "statusCode": 406,
-          "message": "",
-          "name": "Rest Error"
+          "message": "None of requested Content-Types \"application/vnd.apiblueprint.parseresult+json; version=2.2\" is supported. Supported MIME types: application/vnd.refract.parse-result, application/vnd.refract.parse-result; version=0.6, application/vnd.refract.parse-result; version=1.0, application/vnd.refract.parse-result+json, application/vnd.refract.parse-result+json; version=0.6, application/vnd.refract.parse-result+json; version=1.0, application/vnd.refract.parse-result+yaml, application/vnd.refract.parse-result+yaml; version=0.6, application/vnd.refract.parse-result+yaml; version=1.0"
         }

@@ -69,9 +69,7 @@ API Blueprint as defined in its [specification](https://github.com/apiaryio/api-
 
 + Response 415 (application/vnd.error+json)
     + Attributes
-        + statusCode: 415 (number)
         + message: ``Unsupported Refract Serialisation version `2.0`. Supported: 0.6, 1.0.``
-        + name: Rest Error
 
 + Request Unknown Content Type (application/vnd.apiblueprint.ast+json)
 
@@ -79,6 +77,4 @@ API Blueprint as defined in its [specification](https://github.com/apiaryio/api-
 
 + Response 415 (application/vnd.error+json)
     + Attributes
-        + statusCode: 415 (number)
         + message: ``Unsupported Content-Type `application/vnd.apiblueprint.ast+json`. Supported: application/vnd.refract+json, application/vnd.refract.parse-result+json. API Blueprint AST is no longer supported.``
-        + name: Rest Error
