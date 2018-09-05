@@ -23,5 +23,3 @@ content:
       Expected "COPY", "DELETE", "GET", "HEAD", "LOCK", "MKCOL", "MOVE",
       "OPTIONS", "PATCH", "POST", "PROPPATCH", "PUT" or "UNLOCK" but end of
       input found.
-
-

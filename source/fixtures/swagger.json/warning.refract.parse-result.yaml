@@ -5,6 +5,8 @@ content:
       classes:
         - api
       title: Swagger
+    attributes:
+      version: '2.0'
     content:
       - element: resource
         attributes:
@@ -42,5 +44,3 @@ content:
             - - 234
               - 67
     content: Default response is not yet supported
-
-

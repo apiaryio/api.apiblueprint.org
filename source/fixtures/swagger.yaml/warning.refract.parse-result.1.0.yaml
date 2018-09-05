@@ -10,6 +10,10 @@ content:
       title:
         element: string
         content: Swagger
+    attributes:
+      version:
+        element: string
+        content: '2.0'
     content:
       - element: resource
         attributes:
@@ -68,5 +72,3 @@ content:
                   - element: number
                     content: 46
     content: Default response is not yet supported
-
-

@@ -18,6 +18,12 @@
           "content": "Swagger"
         }
       },
+      "attributes": {
+        "version": {
+          "element": "string",
+          "content": "2.0"
+        }
+      },
       "content": [
         {
           "element": "resource",
@@ -128,4 +134,3 @@
     }
   ]
 }
-

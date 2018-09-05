@@ -23,5 +23,3 @@ content:
                   - element: number
                     content: 9
     content: base type 'A' circularly referencing itself
-
-
