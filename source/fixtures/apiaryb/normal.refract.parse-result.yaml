@@ -27,7 +27,6 @@ content:
                       - element: httpRequest
                         attributes:
                           method: GET
-                          headers: null
                         content: []
                       - element: httpResponse
                         attributes:
@@ -49,4 +48,3 @@ content:
                               classes:
                                 - messageBody
                             content: Hello World!
-

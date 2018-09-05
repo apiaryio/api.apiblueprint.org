@@ -34,5 +34,3 @@ content:
                   - element: number
                     content: 37
     content: 'Missing required property: version'
-
-

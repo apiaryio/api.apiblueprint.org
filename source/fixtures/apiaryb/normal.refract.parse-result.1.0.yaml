@@ -45,9 +45,6 @@ content:
                           method:
                             element: string
                             content: GET
-                          headers:
-                            element: 'null'
-                            content: null
                       - element: httpResponse
                         attributes:
                           statusCode:
@@ -73,4 +70,3 @@ content:
                                   - element: string
                                     content: messageBody
                             content: Hello World!
-

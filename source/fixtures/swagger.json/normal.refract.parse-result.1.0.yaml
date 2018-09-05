@@ -10,6 +10,10 @@ content:
       title:
         element: string
         content: Swagger
+    attributes:
+      version:
+        element: string
+        content: '2.0'
     content:
       - element: resource
         attributes:
@@ -40,4 +44,3 @@ content:
                     content:
                       - element: copy
                         content: Test response
-

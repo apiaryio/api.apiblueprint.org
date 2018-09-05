@@ -18,5 +18,3 @@ content:
             - - 15
               - 23
     content: 'Missing required property: version'
-
-

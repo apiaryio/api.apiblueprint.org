@@ -12,5 +12,3 @@ content:
             - - 39
               - 9
     content: base type 'A' circularly referencing itself
-
-
