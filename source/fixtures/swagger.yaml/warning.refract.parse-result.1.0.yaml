@@ -68,7 +68,21 @@ content:
               - element: array
                 content:
                   - element: number
+                    attributes:
+                      line:
+                        element: number
+                        content: 10
+                      column:
+                        element: number
+                        content: 8
                     content: 167
                   - element: number
+                    attributes:
+                      line:
+                        element: number
+                        content: 12
+                      column:
+                        element: number
+                        content: 0
                     content: 46
     content: Default response is not yet supported
