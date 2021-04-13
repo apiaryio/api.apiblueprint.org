@@ -17,7 +17,7 @@ workflows:
 jobs:
   generate:
     docker:
-      - image: node:8
+      - image: node:14
     steps:
       - checkout
       - run:
