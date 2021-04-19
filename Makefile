@@ -119,7 +119,7 @@ source/fixtures/swagger.yaml/%.refract.parse-result.1.0.yaml: source/fixtures/sw
 	@$(FURY_YAML) $< > $@ || true
 
 node_modules:
-	@npm install --no-optional hercule dredd js-yaml media-typer chai @apielements/cli
+	@npm install --no-optional
 
 gems:
 	@bundle install --path=gems
