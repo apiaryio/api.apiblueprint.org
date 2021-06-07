@@ -1,0 +1,28 @@
+{
+  "name": "api.apiblueprint.org",
+  "version": "1.0.0",
+  "description": "[![Apiary Documentation](https://img.shields.io/badge/Apiary-Documented-blue.svg)](http://docs.apiblueprintapi.apiary.io/)",
+  "main": "index.js",
+  "dependencies": {
+    "@apielements/cli": "^0.10.4",
+    "chai": "^4.3.4",
+    "dredd": "^14.0.0",
+    "hercule": "^5.1.3",
+    "js-yaml": "^4.0.0",
+    "media-typer": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiaryio/api.apiblueprint.org.git"
+  },
+  "author": "Apiary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiaryio/api.apiblueprint.org/issues"
+  },
+  "homepage": "https://github.com/apiaryio/api.apiblueprint.org#readme"
+}
